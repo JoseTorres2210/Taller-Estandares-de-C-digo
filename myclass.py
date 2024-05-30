@@ -25,10 +25,10 @@ class passagner:
             return 0.0
 
 class Plane:
-    def __init__(self, dist, num, dur):
+    def __init__(self, dist, num, duration):
         self.myclass = myclass()
         self.passanger = passagner(num)
-        self.total_time = total_time(dur)
+        self.total_time = total_time(duration)
         self.dist = dist
         self.seats = 200
 
@@ -47,28 +47,28 @@ class Plane:
         return max(int(number_total), 0)
 
 class total_time:
-    def __init__(self, dur):
-        self.dur = dur
+    def __init__(self, duration):
+        self.duration = duration
 
     def is_valid_total_time(self):
-        return isinstance(dir,int) and self.dur > 0
+        return isinstance(self.duration,int) and self.duration > 0
 
     def get_fee(self):
-        return 200 if self.dur < 7 else 0
+        return 200 if self.duration < 7 else 0
 
     def get_best_promo_ever(self):
-        return 200 if self.dur > 30 else 0
+        return 200 if self.duration> 30 else 0
     
     def get_weekend(self):
-        return 100 if self.dur > 7 else 0
+        return 100 if self.duration > 7 else 0
 
 class vacation:
     cost_base = 1000
 
-    def __init__(self, dist, num, dur):
+    def __init__(self, dist, num, duration):
         self.myclass = myclass()
         self.passagner = passagner(num)
-        self.total_time = total_time(dur)
+        self.total_time = total_time(duration)
         self.dist = dist
 
     def sum(self):
@@ -92,11 +92,11 @@ def main():
     #this are the inputs
     dist = "Paris"
     num = 5
-    dur = 10
+    duration = 10
 
 
     #this are the outputs
-    calculator = vacation(dist, num, dur)
+    calculator = vacation(dist, num, duration)
     cost = calculator.sum()
 
     #this will do some printing
